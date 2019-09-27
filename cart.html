@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/reset.css">
+<title>Document</title>
+</head>
+<style>
+
+.cart{
+    background: #fff;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #eee;
+    min-height: 800px;
+}
+table{
+    border-collapse:collapse;
+}
+tr{
+    border-bottom: 1px solid #e5e5e5;
+}
+td{
+    text-align: center;
+    padding:10px;
+}
+ tr td:nth-child(1){
+    padding-left:20px;
+    text-align: left;
+}
+tr td:nth-child(2){
+    text-align: left;
+    width:600px;
+}
+td h5,td img{
+    display: inline-block;
+    vertical-align: top;
+}
+td img{
+    margin-left:50px;
+}
+td h5{
+    color:#000;
+    margin-left:20px;
+}
+.number{
+    width:120px;
+    margin:auto;
+}
+.number input{
+    display: block;
+    float: left;
+    height:30px;
+    width: 30px;
+}
+.number .num{
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+    border:1px solid #666;
+    box-sizing: border-box;
+}
+.total{
+    font-size:20px;
+}
+.total input{
+    margin:10px;
+}
+.total i,.total em{
+    color:red;
+}
+.account{
+    display: block;
+    margin-left: 30px;
+    margin-top:30px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: orange;
+    border:0;
+    color:#fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+</style>
+<body>
+<div class="top clear_fix">
+    <div class="container">
+        <div class="top0">
+            <div class="left">
+                欢迎光临，漫客商城！
+                <a href="login.html" class="login">登录</a>
+                        "|"
+                <a href="register.html" class="register">注册</a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li class=myorder><a href="3" class="order">我的订单</a></li>
+                    <li><a href="#" class="order">新手指南</a></li>
+                    <li class=li1><a href="#">收藏本站</a></li>
+                    <li class="li3"><a href="#">微信扫一扫<img src="images/ma.png" width="160"></a></li>
+                </ul>
+            </div>
+            <div class="clear0"></div>
+        </div>
+        <div class="top1 clear_fix">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="search">
+                <input type="text" name="keywords" placeholder="请输入关键字搜索">
+                <input type="submit" value="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="cart">
+        <table width="100%">
+                <tr>
+                    <th><input type="checkbox" class="checkAll">全选</th>
+                    <th >商品</th>
+                    <th width=100>本店价</th>
+                    <th >购买数量</th>
+                    <th width=100>小计</th>
+                    <th >操作</th>
+                </tr>
+            <tbody class="cart_tbody">
+                
+            </tbody>
+
+        </table>
+        <p class="total">
+            <input type="checkbox" class="checkAll">全选
+            <b>
+                共计：<i>0</i>件商品，￥<em>0.00</em>元
+            </b>
+        </p>
+        <button class="account">去结算</button>
+    </div>
+    
+    
+</div>
+<div class="footer clear_fix">
+    <div class="right_nav">
+        <ul>
+            <li>
+                <a href="cart.html">
+                <i>购</br>物</br>车</br></i>
+                <b class="cart_counts"></b>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                <i>返回
+                    <span>返回首页</span>
+                </i>
+                </a>
+                
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="footer_nav">
+            <ul>
+                <li><a href="#">知音漫客旗舰店 </a></li>
+                <li><a href="#">知音动漫图书官方店 </a></li>
+                <li><a href="#">漫客读书 </a></li>
+                <li><a href="#">馒头官微</a></li>
+                <li><a href="#">知音漫客官微 </a></li>
+                <li><a href="#">筑梦二次元 </a></li>
+            </ul>
+        </div>
+        <div class="our_services clear_fix">
+            <p>服务时间：08:30-17:00 </p>
+            <p>客服热线：<span>027-68883360</span></p>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <div class="footer_info clear_fix"> Copyright ©2007 - 2017 湖北知音动漫有限公司版权所有 <br>
+            网址：www.zymkshop.com 备案号：鄂ICP备17018280号<br>
+            <div style="width:300px;margin:0 auto; padding:20px 0;">
+                <a target="_blank"
+                    href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42010602003555"
+                    style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="images/beian.png" style="float:left;" />
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">鄂公网安备
+                        42010602003555号</p>
+                </a>
+            </div> <a href="https://m.kuaidi100.com/" target="_blank" >快递查询</a>
+        </div> 
+    </div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/promise.js"></script>
+<script src="js/header_nav.js"></script>
+<script type="text/javascript">
+/**********************************加载数据***************************************/
+function loadPage(){
+    // 从本地存储中将收藏的数据读取出来
+    var arr = JSON.parse(localStorage.getItem("list"));
+    var str = '';
+    for(var i=0;i<arr.length;i++){
+        str += `
+        <tr>
+            <td><input type="checkbox"  class="checkOne"></td>
+            <td>
+                <img src="${arr[i].image}" width="100" height="100">
+                <h5>${arr[i].name}</h5>
+            </td>
+            <td>
+                ￥<span class="price">${arr[i].price}</span>
+            </td>
+            <td>
+                <div class="number clear_fix">
+                    <input type="button" value="-" class="cut">
+                    <input type="number" class="num" value="${arr[i].number}">
+                    <input type="button" value="+" class="add">
+                    <input type="hidden" name="stock" value="${arr[i].stock}">
+                </div>
+            </td>
+            <td>
+                    ￥<span class="subtotal">${(arr[i].price*arr[i].number).toFixed(2)}</span>
+            </td>
+            <td>
+                <button data-id="${arr[i].id}" class="del">删除</button>
+            </td>
+        </tr>
+        `
+    }
+    $(".cart_tbody").html(str);
+    bindClick()
+}
+loadPage()
+/***********************************从收藏页中删除**************************************/
+function bindClick(){
+    $(".del").click(function(){
+        console.log(this);
+        // 先从本地存储中提取所有数据
+        var arr = JSON.parse(localStorage.getItem("list"));
+        // 指定下标删除几个元素：  arr.splice(下标,删除个数)
+        var id = $(this).attr("data-id");
+        // 找到当前数据在大数组中的下标
+        var key;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].id==id){
+                key = i;
+            }
+        }
+        arr.splice(key,1);
+        localStorage.setItem("list",JSON.stringify(arr));
+        loadPage()
+        cartSum()
+    });
+}
+
+/**********************************数字加减******************************/
+$(".number").click(function(e){
+    var target = e.target;
+    if(target.className == 'cut'){
+        // 处理数字递减
+        var num = $(target).next().val()-0-1;
+        if(num<=1){
+            num=1;
+        }else{
+            num = $(target).next().val()-0-1;
+        }
+        $(target).next().val(num)
+    }
+    if(target.className == 'add'){
+        // 处理数字递增
+        var num = $(target).prev().val()-0+1;
+        if(num>=$(target).next().val()-0){
+            num=$(target).next().val()-0;
+        }else{
+            num = $(target).prev().val()-0+1;
+        }
+        $(target).prev().val(num)
+    }
+    subtotal();
+    countTotal();
+    cartSum();
+});
+/********************计算每一项的小计***********************/
+function subtotal(){
+    $(".subtotal").each(function(){
+        var num = $(this).parent().prev().children().find(".num").val()-0;
+        var price = $(this).parent().siblings().find(".price").text()-0;
+        // console.log(num,price);
+        $(this).text((num*price).toFixed(2));
+    });
+}
+
+
+/******************************全选功能*******************************/
+$(".checkAll").click(function(){
+    var c = $(this).prop("checked");
+    if(c){
+        $(".checkOne").prop("checked",true);
+        $(".checkAll").prop("checked",true);
+    }else{
+        $(".checkOne").prop("checked",false);
+        $(".checkAll").prop("checked",false);
+    }
+    countTotal();
+});
+/********************每个复选框的点击******************************/
+$(".checkOne").click(function(){
+    var arr = Array.prototype.slice.call($(".checkOne"));
+    var res = arr.every(function(v){
+        // console.log(v);
+        if($(v).prop("checked")){
+            return true;
+        }
+    });
+    // console.log(res);
+    if(res){
+        $(".checkAll").prop("checked",true);
+    }else{
+        $(".checkAll").prop("checked",false);
+    }
+    countTotal()
+});
+
+
+/**************************共计*****************************/
+function countTotal(){
+    var sum = 0;
+    var totalPrice = 0;
+    $(".checkOne:checked").each(function(k,v){
+        sum += $(v).parent().siblings().find(".number").children(".num").val()-0;
+        totalPrice += $(v).parent().siblings().children(".subtotal").text()-0;
+    });
+    $(".total b i").text(sum);
+    $(".total b em").text(totalPrice.toFixed(2));
+}
+/********************本地存储设置购物车内商品总数********************/
+function cartSum(){
+    var cartSum =0;
+    $(".num").each(function(k,v){
+        cartSum = $(v).val()-0
+    })
+    localStorage.setItem("cart_counts",`${cartSum}`)
+    $(".cart_counts").text(localStorage.getItem("cart_counts"))
+}
+$(".cart_counts").text(localStorage.getItem("cart_counts"))
+
+</script>
+</html>

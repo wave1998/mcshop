@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/reset.css">
+<title>列表页</title>
+
+</head>
+<body class="clear_fix">
+    <div class="top clear_fix">
+        <div class="container">
+        <div class="top0">
+            <div class="left">
+                欢迎光临，漫客商城！
+                <a href="login.html" class="login">登录</a>
+                "|"
+                <a href="register.html" class="register">注册</a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li class=myorder><a href="3" class="order">我的订单</a></li>
+                    <li><a href="#" class="order">新手指南</a></li>
+                    <li class=li1><a href="#">收藏本站</a></li>
+                    <li class="li3"><a href="#">微信扫一扫<img src="images/ma.png" width="160"></a></li>
+                </ul>
+            </div>
+            <div class="clear0"></div>
+        </div>
+        <div class="top1 clear_fix">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="">
+                </a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="#">热门周边</a>
+                    <div class="box clear_fix">
+                            
+                    </div>
+                </li>
+                <li>
+                    <a href="#">热门漫画</a>
+                    <div class="box clear_fix">
+                        
+                    </div>
+                </li>
+                <li>
+                    <a href="#">优秀小说</a>
+                    <div class="box clear_fix">
+                        
+                    </div>
+                </li>
+            </ul>
+            
+
+            <div class="search">
+                <input type="text" name="keywords" placeholder="请输入关键字搜索">
+                <input type="submit" value="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="index_body clear_fix" style="padding-top:50px;">
+    <div class="container clear_fix listContainer">
+   
+    </div>
+</div>
+
+<div class="list" style="margin:auto;"></div>
+
+<div class="footer clear_fix">
+    <div class="right_nav">
+        <ul>
+            <li>
+                <a href="cart.html">
+                <i>购</br>物</br>车</br></i>
+                <b class="cart_counts">0</b>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                <i>返回
+                    <span>返回首页</span>
+                </i>
+                </a>
+                
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="footer_nav">
+            <ul>
+                <li><a href="#">知音漫客旗舰店 </a></li>
+                <li><a href="#">知音动漫图书官方店 </a></li>
+                <li><a href="#">漫客读书 </a></li>
+                <li><a href="#">馒头官微</a></li>
+                <li><a href="#">知音漫客官微 </a></li>
+                <li><a href="#">筑梦二次元 </a></li>
+            </ul>
+        </div>
+        <div class="our_services clear_fix">
+            <p>服务时间：08:30-17:00 </p>
+            <p>客服热线：<span>027-68883360</span></p>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <div class="footer_info clear_fix"> Copyright ©2007 - 2017 湖北知音动漫有限公司版权所有 <br>
+            网址：www.zymkshop.com 备案号：鄂ICP备17018280号<br>
+            <div style="width:300px;margin:0 auto; padding:20px 0;">
+                <a target="_blank"
+                    href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42010602003555"
+                    style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="images/beian.png" style="float:left;" />
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">鄂公网安备
+                        42010602003555号</p>
+                </a>
+            </div> <a href="https://m.kuaidi100.com/" target="_blank" >快递查询</a>
+        </div> 
+    </div>
+</div>
+</body>
+<script src="js/cookie.js"></script>
+<script src="js/page.js"></script>
+<script src="js/promise.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/header_nav.js"></script>
+<script>
+$(".cart_counts").text(localStorage.getItem("cart_counts"))
+fn();
+async function fn(){
+    var res = await PAjax({
+        method:"get",
+        url:"php/list.php",
+        data:{},
+        async:true,
+        success:function(res){
+            resolve(res);
+        }
+    })
+    var str = '';
+    var data = JSON.parse(res);
+    var arr = []
+    for(var i=0;i<data.length;i++){
+        str +=
+        `
+        <div class="box_wrap" style="width:25%;">
+         <div class="content" style="background:#fff;height:auto;">
+             <a href="detail.html?id=${data[i].id}">
+                 <img src="${data[i].image}" alt="">
+             </a>
+             <a href="detail.html?id=${data[i].id}">
+                ${data[i].name} 
+             </a>
+             <em style="display:block;margin-top:20px;">${data[i].price}</em>
+             <i style="display:block;margin:10px auto;">0人评价</i>
+             <a href="detail.html?id=${data[i].id}">查看详情</a>
+         </div>
+        </div>
+        `
+    }
+    document.querySelector('.listContainer').innerHTML = str
+    var a = document.querySelectorAll('.box_wrap')
+    for(var i =0;i<a.length;i++){
+      arr.push(a[i])
+    }
+  
+    
+  var total = arr.length;
+  var size = 12;
+  var page = new Page("list",{
+    language:{
+        first:"首页",
+        prev:"上一页",
+        list:"list",
+        next:"下一页",
+        last:"尾页",
+    },
+    pageData:{
+        total:total,
+        size:size,
+    },
+    show:function(currentPage){
+        var showArr = arr.slice((currentPage-1)*size,currentPage*size)
+        console.log(showArr.length)
+        document.querySelector('.listContainer').innerHTML=""
+        for(var i=0;i<showArr.length;i++){
+          document.querySelector('.listContainer').appendChild(showArr[i])
+        }
+    }
+  })
+}
+
+</script>
+</html>
