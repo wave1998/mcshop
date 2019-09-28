@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/register.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>注册页面</title>
+</head>
+
+<body>
+    <div class="reg_wrap">
+        <div class="container reg_container">
+            <h2>注册会员</h2>
+            <form action="javascript:;">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>用户名：</th>
+                        <td>
+                            <input name="username" type="text" placeholder="请输入用户名(6-16位)" />
+                            <span> *</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>邮箱：</th>
+                        <td>
+                            <input name="email" type="text" id="email" />
+                            <span> *</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>密码：</th>
+                        <td>
+                            <input name="pass" type="password" placeholder="密码(6-16位)数字字母组成，字母开头" />
+                            <span> *</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>确认密码：</th>
+                        <td>
+                            <input type="password" name="repass" />
+                            <span id="conform_password_notice"> *</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>手机</th>
+                        <td>
+                            <input type="number" name="tel" />
+                            <span> *</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th></th>
+                        <td>
+                            <label class="checked">
+                                <input name="agreement" type="checkbox" value="1" checked="checked" />
+                                我已看过并接受《<a href="#" style="color:blue" target="_blank">用户协议</a>》
+                            </label>
+                            <div class="accept" style="color:red;font-size:12px;display:none;">请勾选协议</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input value="同意协议并注册" name="Submit"  type="submit">
+                            <span></span>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div class="want_login">
+               我已有账号，我要登录
+                <a href="login.html">马上登录</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="background: none;">
+            <div class="footer_info"> Copyright ©2007 - 2017 湖北知音动漫有限公司版权所有 <br>
+                网址：www.zymkshop.com 备案号：鄂ICP备17018280号<br>
+                <div style="width:300px;margin:0 auto; padding:20px 0;">
+                    <a target="_blank"
+                        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42010602003555"
+                        style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="../static/images/beian.png" style="float:left;" />
+                        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">鄂公网安备
+                            42010602003555号</p>
+                    </a>
+                </div> <a href="https://m.kuaidi100.com/" target="_blank" >快递查询</a>
+                <div class="clear10"></div>
+            </div>
+        </div>
+</body>
+<script src="../static/js/promise.js"></script>
+<script src="../static/js/register.js"></script>
+
+</html>
