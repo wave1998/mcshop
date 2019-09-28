@@ -13,12 +13,14 @@ if(uname == undefined){
     $(".nav li").mouseleave(function () {
         $(this).children().eq(1).stop().slideUp(300)
     })
-    nav();
-    async function nav(){
+    nav("热门周边");
+    nav("最热漫画");
+    nav("优秀小说");
+    async function nav(title){
         var res = await PAjax({
-            method:"get",
+            method:"post",
             url:"php/header_nav.php",
-            data:{},
+            data:{t:title},
             async:true,
             success:function(res){
                 resolve(res);
@@ -26,6 +28,7 @@ if(uname == undefined){
         })
         var str = '';
         var data = JSON.parse(res);
+        console.log(data)
         for(var i=0;i<data.length;i++){
             str += 
             `
@@ -42,7 +45,14 @@ if(uname == undefined){
             </div>
             `
         }
-        $('.nav .box').html(str)
+        if(title=="热门周边"){
+            $('.nav .box1').html(str)
+        }else if(title == "最热漫画"){
+            $('.nav .box2').html(str)
+        }else if(title == "优秀小说"){
+            $('.nav .box3').html(str)
+        }
+        
     }
     // banner轮播
     $(".swiper-container").mouseenter(function(){
@@ -126,7 +136,7 @@ if(uname == undefined){
         var data = JSON.parse(res);
         for(var i=0;i<data.length;i++){
              var price = Number(data[i].price).toFixed(2)
-             if(i>=7){
+             if(i==7){
                 str +=
                 `
                 <div class="box_wrap wrap_10">
@@ -140,11 +150,11 @@ if(uname == undefined){
                         <em>￥${price}</em>
                     </div>
                     <div class="content">
-                        <a href="#"></a>
+                        <a href="list.html"></a>
                     </div>
                 </div>
                 `
-            }else{
+            }else if(i<7){
             str += 
             `
             <div class="box_wrap">
@@ -161,10 +171,14 @@ if(uname == undefined){
             </div>
             `
 
+            }else if(i>7){
+                str += ' '
             }
         }
         $('.index_body_novel .fr').html(str)
     }
+
+
     // 杂志
     $(".index_body_magazine li").mouseover(function(){
         $(this).css({
@@ -175,10 +189,26 @@ if(uname == undefined){
             "color":"#000",
             "border-bottom":"0px"
         });
-        var title = $(this).text().trim();
-        index_content_magazine(title);
+        var title = $(this).text()
         console.log(title)
+        var minfr =$(this).parent().parent().next().find(".fr")
+        if(title=="知音漫客"){
+            minfr.find(".minfr_1").css("z-index","10")
+            minfr.find(".minfr_1").siblings().css("z-index","1")
+        }else if(title == "漫客小说绘"){
+            minfr.find(".minfr_2").css("z-index","10")
+            minfr.find(".minfr_2").siblings().css("z-index","1")
+        }else if(title == "漫客绘心"){
+            minfr.find(".minfr_3").css("z-index","10")
+            minfr.find(".minfr_3").siblings().css("z-index","1")
+        }else if(title == "漫客绘意"){
+            minfr.find(".minfr_4").css("z-index","10")
+            minfr.find(".minfr_4").siblings().css("z-index","1")
+        }
     })
+    index_content_magazine("漫客小说绘");
+    index_content_magazine("漫客绘心");
+    index_content_magazine("漫客绘意");
     index_content_magazine("知音漫客");
     async function index_content_magazine(title){
         var res = await PAjax({
@@ -195,7 +225,6 @@ if(uname == undefined){
         var length = data.length;
         for(var i=0;i<length;i++){
              var price = Number(data[i].price).toFixed(2)
-             console.log(i)
              if(i>7){
                  str += ``
              }else if(i==7){
@@ -212,7 +241,7 @@ if(uname == undefined){
                         <em>￥${price}</em>
                     </div>
                     <div class="content">
-                        <a href="#"></a>
+                        <a href="list.html"></a>
                     </div>
                 </div>
                 `
@@ -234,7 +263,17 @@ if(uname == undefined){
             `
             }
         }
-        $('.index_body_magazine .fr').html(str)
+        if(title=="知音漫客"){
+            $('.index_body_magazine .fr .minfr_1').html(str)
+        }else if(title == "漫客小说绘"){
+            $('.index_body_magazine .fr .minfr_2').html(str)
+        }else if(title == "漫客绘心"){
+            $('.index_body_magazine .fr .minfr_3').html(str)
+        }else if(title == "漫客绘意"){
+            $('.index_body_magazine .fr .minfr_4').html(str)
+        }
+        
+        
     }
 
 

@@ -506,7 +506,6 @@ body {
 .index_body .ib_content .content_body .fr {
   width: 992px;
   float: right;
-  overflow: hidden;
 }
 .index_body .ib_content .content_body .fr .content {
   border: 0;
@@ -537,9 +536,9 @@ body {
   background: #FDB14F url(../images/more_white.png) no-repeat 67px center;
 }
 .index_body .ib_content .content_body .fr .wrap_10 .content:nth-child(2) a {
-  width: 50px;
+  width: 180px;
   height: 100%;
-  background: url(../images/back.png) no-repeat 0px 33px;
+  background: url(../images/back.png) no-repeat 125px 33px;
 }
 .index_body .index_body_magazine {
   overflow: hidden;
@@ -560,9 +559,24 @@ body {
   cursor: pointer;
   border-bottom: 0px;
 }
+.index_body .index_body_magazine .title ul li:nth-child(1) {
+  color: #FDB14F;
+  border-bottom: 2px solid #FDB14F;
+}
 .index_body .index_body_magazine .content_body .fl img {
   width: 234px;
   height: 300px;
+}
+.index_body .index_body_magazine .content_body .fr {
+  position: relative;
+}
+.index_body .index_body_magazine .content_body .fr .minfr {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.index_body .index_body_magazine .content_body .fr .minfr1 {
+  z-index: 10;
 }
 
 .footer {

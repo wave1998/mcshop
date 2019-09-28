@@ -525,7 +525,6 @@ body{
             .fr{
                 width: 992px;
                 float: right;
-                overflow: hidden;
                 .content{
                     border:0;
                     background-color: #fff;
@@ -555,15 +554,16 @@ body{
                     .content:nth-child(2){
                         background: #FDB14F url(../images/more_white.png) no-repeat 67px center;
                         a{
-                            width: 50px;
+                            width: 180px;
                             height: 100%;
-                            background: url(../images/back.png) no-repeat 0px 33px;
+                            background: url(../images/back.png) no-repeat 125px 33px;
                         }
                     }
                 }
             }
         }
     }
+    // 杂志
     .index_body_magazine{
         overflow: hidden;
         .title{
@@ -580,6 +580,10 @@ body{
                     cursor: pointer;
                     border-bottom: 0px;
                 }
+                li:nth-child(1){
+                    color:#FDB14F;
+                    border-bottom:2px solid #FDB14F;
+                }
             }
         }
         .content_body{
@@ -588,6 +592,18 @@ body{
                     width: 234px;
                     height: 300px;
                 }
+            }
+            .fr{
+                position: relative;
+                .minfr{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                .minfr1{
+                    z-index: 10;
+                }
+                
             }
         }
     }
